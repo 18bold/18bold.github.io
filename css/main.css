@@ -1695,16 +1695,6 @@ pre .javascript .function {
   cursor: pointer;
   -webkit-transform: translateZ(0);
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .sidebar-toggle {
-    display: none !important;
-  }
-}
-@media (max-width: 767px) {
-  .sidebar-toggle {
-    display: none !important;
-  }
-}
 .sidebar-toggle-line {
   position: relative;
   display: inline-block;
@@ -1808,7 +1798,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1f79df;
+  background: #ff40ff;
 }
 .links-of-blogroll {
   font-size: 13px;
