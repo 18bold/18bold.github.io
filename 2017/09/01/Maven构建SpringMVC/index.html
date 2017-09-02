@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="消失的src/main/java    在BuildPathl里更改jdk,改为自己工作空间的jdk   spring-mvc.xml 头部信息  12345678910&amp;lt;beans  xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;      xmlns:xsi=&amp;quot;http://www.w3.org/20">
+<meta name="description" content="消失的src/main/java 在BuildPathl里更改jdk,改为自己工作空间的jdk  spring-mvc.xml 头部信息12345678910&amp;lt;beans  xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;      xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLS">
 <meta name="keywords" content="坑,Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven构建SpringMVC踩坑">
 <meta property="og:url" content="http://yoursite.com/2017/09/01/Maven构建SpringMVC/index.html">
 <meta property="og:site_name" content="Bold">
-<meta property="og:description" content="消失的src/main/java    在BuildPathl里更改jdk,改为自己工作空间的jdk   spring-mvc.xml 头部信息  12345678910&amp;lt;beans  xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;      xmlns:xsi=&amp;quot;http://www.w3.org/20">
+<meta property="og:description" content="消失的src/main/java 在BuildPathl里更改jdk,改为自己工作空间的jdk  spring-mvc.xml 头部信息12345678910&amp;lt;beans  xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;      xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-01T13:00:18.573Z">
+<meta property="og:updated_time" content="2017-09-02T05:29:37.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven构建SpringMVC踩坑">
-<meta name="twitter:description" content="消失的src/main/java    在BuildPathl里更改jdk,改为自己工作空间的jdk   spring-mvc.xml 头部信息  12345678910&amp;lt;beans  xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;      xmlns:xsi=&amp;quot;http://www.w3.org/20">
+<meta name="twitter:description" content="消失的src/main/java 在BuildPathl里更改jdk,改为自己工作空间的jdk  spring-mvc.xml 头部信息12345678910&amp;lt;beans  xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;      xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLS">
 
 
 
@@ -366,41 +366,18 @@
       
 
       
-        <ul>
-<li>消失的src/main/java </li>
-</ul>
-<blockquote>
+        <h2 id="消失的src-main-java"><a href="#消失的src-main-java" class="headerlink" title="消失的src/main/java"></a>消失的src/main/java</h2><blockquote>
 <p>在BuildPathl里更改jdk,改为自己工作空间的jdk</p>
 </blockquote>
-<ul>
-<li>spring-mvc.xml 头部信息</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;beans  xmlns=&quot;http://www.springframework.org/schema/beans&quot;  </div><div class="line">    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;  </div><div class="line">    xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</div><div class="line">    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;  </div><div class="line">    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans    </div><div class="line">    http://www.springframework.org/schema/beans/spring-beans.xsd   </div><div class="line">    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd  </div><div class="line">    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>使用注解配置bean，一定要在beans.xml加入下面这句</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;context:component-scan base-package=&quot;com.bold.services&quot;&gt;&lt;/context:component-scan&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>配置的例子</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@Component(&quot;userService&quot;)</div><div class="line">public class UserService &#123;</div><div class="line">	private Logger logger = LoggerFactory.getLogger(getClass());</div><div class="line">	</div><div class="line">	@Resource(name=&quot;userMapper&quot;)</div><div class="line">	UserMapper userMapper;</div><div class="line">	</div><div class="line">	// 需要添加 setXxx()方法</div><div class="line">	public void setUserMapper(UserMapper userMapper) &#123;</div><div class="line">		this.userMapper = userMapper;</div><div class="line">	&#125;</div><div class="line">        ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>添加以下到web.xml</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;context-param&gt;</div><div class="line">	&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">	&lt;param-value&gt;classpath:spring-common.xml&lt;/param-value&gt;</div><div class="line">&lt;/context-param&gt;</div><div class="line">&lt;listener&gt;</div><div class="line">	&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</div><div class="line">&lt;/listener&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>从2.3转3.0</li>
-</ul>
-<blockquote>
+<h2 id="spring-mvc-xml-头部信息"><a href="#spring-mvc-xml-头部信息" class="headerlink" title="spring-mvc.xml 头部信息"></a>spring-mvc.xml 头部信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;beans  xmlns=&quot;http://www.springframework.org/schema/beans&quot;  </div><div class="line">    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;  </div><div class="line">    xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</div><div class="line">    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;  </div><div class="line">    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans    </div><div class="line">    http://www.springframework.org/schema/beans/spring-beans.xsd   </div><div class="line">    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd  </div><div class="line">    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="使用注解配置bean，一定要在beans-xml加入下面这句"><a href="#使用注解配置bean，一定要在beans-xml加入下面这句" class="headerlink" title="使用注解配置bean，一定要在beans.xml加入下面这句"></a>使用注解配置bean，一定要在beans.xml加入下面这句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;context:component-scan base-package=&quot;com.bold.services&quot;&gt;&lt;/context:component-scan&gt;</div></pre></td></tr></table></figure>
+<h3 id="配置的例子"><a href="#配置的例子" class="headerlink" title="配置的例子"></a>配置的例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@Component(&quot;userService&quot;)</div><div class="line">public class UserService &#123;</div><div class="line">	private Logger logger = LoggerFactory.getLogger(getClass());</div><div class="line">	</div><div class="line">	@Resource(name=&quot;userMapper&quot;)</div><div class="line">	UserMapper userMapper;</div><div class="line">	</div><div class="line">	// 需要添加 setXxx()方法</div><div class="line">	public void setUserMapper(UserMapper userMapper) &#123;</div><div class="line">		this.userMapper = userMapper;</div><div class="line">	&#125;</div><div class="line">        ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="添加以下到web-xml"><a href="#添加以下到web-xml" class="headerlink" title="添加以下到web.xml"></a>添加以下到web.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;context-param&gt;</div><div class="line">	&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">	&lt;param-value&gt;classpath:spring-common.xml&lt;/param-value&gt;</div><div class="line">&lt;/context-param&gt;</div><div class="line">&lt;listener&gt;</div><div class="line">	&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</div><div class="line">&lt;/listener&gt;</div></pre></td></tr></table></figure>
+<h2 id="从2-3转3-0"><a href="#从2-3转3-0" class="headerlink" title="从2.3转3.0"></a>从2.3转3.0</h2><blockquote>
 <p>修改web.xml,打开Navigation视图 找到.setting 找到“…core.xml”,改为3.0</p>
 </blockquote>
-<ul>
-<li>配置freeMarker<blockquote>
+<h2 id="配置freeMarker"><a href="#配置freeMarker" class="headerlink" title="配置freeMarker"></a>配置freeMarker</h2><blockquote>
 <p>要添加spring-context-support包</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
 <p>要将freeMarker放在前面</p>
 </blockquote>
 
@@ -495,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -533,7 +519,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -571,6 +557,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#消失的src-main-java"><span class="nav-number">1.</span> <span class="nav-text">消失的src/main/java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-mvc-xml-头部信息"><span class="nav-number">2.</span> <span class="nav-text">spring-mvc.xml 头部信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用注解配置bean，一定要在beans-xml加入下面这句"><span class="nav-number">3.</span> <span class="nav-text">使用注解配置bean，一定要在beans.xml加入下面这句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置的例子"><span class="nav-number">3.1.</span> <span class="nav-text">配置的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加以下到web-xml"><span class="nav-number">4.</span> <span class="nav-text">添加以下到web.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从2-3转3-0"><span class="nav-number">5.</span> <span class="nav-text">从2.3转3.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置freeMarker"><span class="nav-number">6.</span> <span class="nav-text">配置freeMarker</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -750,6 +752,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
 
   
 
