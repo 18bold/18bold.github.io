@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="other," />
+  <meta name="keywords" content="反射," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="other">
+<meta name="description" content="定义：能够分析类能力的程序成为反射Class类：存储类信息的类获取方式： 123instance.getClass()Class.forName(className)T.class  //T是Java类型 常用方法123456Object newInstance()  //创建实例的方法Filed[] getFields()   //返回包含Field对象的数组 公有域Filed[] getDec">
+<meta name="keywords" content="反射">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/19/hello-world/index.html">
+<meta property="og:title" content="反射知识点回顾">
+<meta property="og:url" content="http://yoursite.com/2017/09/04/反射/index.html">
 <meta property="og:site_name" content="Bold">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="定义：能够分析类能力的程序成为反射Class类：存储类信息的类获取方式： 123instance.getClass()Class.forName(className)T.class  //T是Java类型 常用方法123456Object newInstance()  //创建实例的方法Filed[] getFields()   //返回包含Field对象的数组 公有域Filed[] getDec">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-19T09:10:44.650Z">
+<meta property="og:updated_time" content="2017-09-04T05:04:50.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="反射知识点回顾">
+<meta name="twitter:description" content="定义：能够分析类能力的程序成为反射Class类：存储类信息的类获取方式： 123instance.getClass()Class.forName(className)T.class  //T是Java类型 常用方法123456Object newInstance()  //创建实例的方法Filed[] getFields()   //返回包含Field对象的数组 公有域Filed[] getDec">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/19/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/04/反射/"/>
 
 
 
 
 
-  <title>Hello World | Bold</title>
+  <title>反射知识点回顾 | Bold</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/反射/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bold">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">反射知识点回顾</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T12:25:32+08:00">
-                2017-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T12:33:07+08:00">
+                2017-09-04
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">other</span>
+                  <a href="/categories/JavaSe/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSe</span>
                   </a>
                 </span>
 
@@ -366,15 +366,12 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="定义：能够分析类能力的程序成为反射"><a href="#定义：能够分析类能力的程序成为反射" class="headerlink" title="定义：能够分析类能力的程序成为反射"></a>定义：能够分析类能力的程序成为反射</h2><h2 id="Class类：存储类信息的类"><a href="#Class类：存储类信息的类" class="headerlink" title="Class类：存储类信息的类"></a>Class类：存储类信息的类</h2><p>获取方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">instance.getClass()</div><div class="line">Class.forName(className)</div><div class="line">T.class  //T是Java类型</div></pre></td></tr></table></figure>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Object newInstance()  //创建实例的方法</div><div class="line">Filed[] getFields()   //返回包含Field对象的数组 公有域</div><div class="line">Filed[] getDeclaredFields()   //返回包含Field对象的数组 全部域</div><div class="line">Method[] getMethods()    //包含Method对象的数组 公有方法</div><div class="line">Method[] getDeclaredMethods()    //包含Method对象的数组 全部方法</div><div class="line">int getModifiers()    //修饰符的返回值</div></pre></td></tr></table></figure>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>get方法不能访问私有域，需要获取权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f.setAccessible(true)    //OK to call f.get(harry)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 实现用反射机制将一个类对象复制给另一个类对象，复制要求是同名属性复制</div><div class="line"> */</div><div class="line">import java.lang.reflect.Field;</div><div class="line"></div><div class="line">public class ClazDemo &#123;</div><div class="line">    public static void copyValue(Object obj1, Object obj2) &#123;</div><div class="line">        Class&lt;?&gt; copyClaz = obj1.getClass();</div><div class="line">        Field[] fields = copyClaz.getDeclaredFields();</div><div class="line">        for (Field field : fields) &#123;</div><div class="line">            try &#123;</div><div class="line">                field.setAccessible(true);</div><div class="line">                field.set(obj2, field.get(obj1));</div><div class="line">                field.setAccessible(false);</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        Student stu1 = new Student(&quot;chenjiabin&quot;, 22);</div><div class="line">        Student stu2 = new Student(&quot;chenjiahui&quot;, 6);</div><div class="line">        System.out.println(&quot;Before copy:&quot; + stu2);</div><div class="line">        copyValue(stu1, stu2);</div><div class="line">        System.out.println(&quot;After copy:&quot; + stu2);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">class Student &#123;</div><div class="line">    private String name;</div><div class="line">    private Integer age;</div><div class="line">    </div><div class="line">    Student(String name, Integer age) &#123;</div><div class="line">        this.name = name;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //省略setter、getter方法...</div><div class="line">    </div><div class="line">    @Override</div><div class="line">    public String toString() &#123;</div><div class="line">        return &quot;Student [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -392,7 +389,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/other/" rel="tag"># other</a>
+            <a href="/tags/反射/" rel="tag"># 反射</a>
           
         </div>
       
@@ -405,14 +402,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/01/Maven构建SpringMVC/" rel="next" title="Maven构建SpringMVC踩坑">
+                <i class="fa fa-chevron-left"></i> Maven构建SpringMVC踩坑
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/31/Mybatis踩的坑/" rel="prev" title="Mybatis踩过的坑">
-                Mybatis踩过的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/04/IntelliJ IDEA中修改Tomcat的输出路径/" rel="prev" title="修改IDEA中Tomcat的输出路径">
+                修改IDEA中Tomcat的输出路径 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -560,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义：能够分析类能力的程序成为反射"><span class="nav-number">1.</span> <span class="nav-text">定义：能够分析类能力的程序成为反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class类：存储类信息的类"><span class="nav-number">2.</span> <span class="nav-text">Class类：存储类信息的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">3.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo"><span class="nav-number">4.</span> <span class="nav-text">Demo</span></a></li></ol></div>
             
 
           </div>
