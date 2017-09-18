@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="短信验证码," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言 短信验证码是经常会使用的一项功能，推荐使用阿里云的云通信（阿里大于）只有发送，验证要自己写，但价格亲民，单条计算。网易云的虽然有自带验证但5000块起充。     主要有两个步骤：  配置短信签名和模板 编码具体步骤查看 开发指南  配置短信平台信息注册阿里云账号 —-&amp;gt; 创建应用获取访问秘钥Access Key —-&amp;gt; 在控制台完成模板与签名的申请 编码创建Maven项目 下载">
+<meta name="keywords" content="短信验证码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="短信验证码">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/短信验证码/index.html">
+<meta property="og:site_name" content="Bold">
+<meta property="og:description" content="前言 短信验证码是经常会使用的一项功能，推荐使用阿里云的云通信（阿里大于）只有发送，验证要自己写，但价格亲民，单条计算。网易云的虽然有自带验证但5000块起充。     主要有两个步骤：  配置短信签名和模板 编码具体步骤查看 开发指南  配置短信平台信息注册阿里云账号 —-&amp;gt; 创建应用获取访问秘钥Access Key —-&amp;gt; 在控制台完成模板与签名的申请 编码创建Maven项目 下载">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918104455.png">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918104153.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918105100.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918110720.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918112150.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170918112336.png">
+<meta property="og:updated_time" content="2017-09-18T03:30:45.582Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="短信验证码">
+<meta name="twitter:description" content="前言 短信验证码是经常会使用的一项功能，推荐使用阿里云的云通信（阿里大于）只有发送，验证要自己写，但价格亲民，单条计算。网易云的虽然有自带验证但5000块起充。     主要有两个步骤：  配置短信签名和模板 编码具体步骤查看 开发指南  配置短信平台信息注册阿里云账号 —-&amp;gt; 创建应用获取访问秘钥Access Key —-&amp;gt; 在控制台完成模板与签名的申请 编码创建Maven项目 下载">
+<meta name="twitter:image" content="http://ovqozoxra.bkt.clouddn.com/20170918104455.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/18/短信验证码/"/>
+
+
+
+
+
+  <title>短信验证码 | Bold</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bold</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/短信验证码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bold">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bold">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">短信验证码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T11:29:49+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/other/" itemprop="url" rel="index">
+                    <span itemprop="name">other</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>短信验证码是经常会使用的一项功能，推荐使用阿里云的云通信（阿里大于）只有发送，验证要自己写，但价格亲民，单条计算。网易云的虽然有自带验证但5000块起充。   </p>
+</blockquote>
+<p>主要有两个步骤：</p>
+<ol>
+<li>配置短信签名和模板</li>
+<li>编码<br>具体步骤查看 <a href="https://help.aliyun.com/document_detail/55284.html?spm=5176.sms-account.109.1.66e36219FD57G" target="_blank" rel="external">开发指南</a></li>
+</ol>
+<h2 id="配置短信平台信息"><a href="#配置短信平台信息" class="headerlink" title="配置短信平台信息"></a>配置短信平台信息</h2><p>注册阿里云账号 —-&gt; 创建应用获取访问秘钥Access Key —-&gt; 在控制台完成模板与签名的申请<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918104455.png" alt="image"><br><img src="http://ovqozoxra.bkt.clouddn.com/20170918104153.jpg" alt="image"></p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><h3 id="创建Maven项目"><a href="#创建Maven项目" class="headerlink" title="创建Maven项目"></a>创建Maven项目</h3><p><img src="http://ovqozoxra.bkt.clouddn.com/20170918105100.jpg" alt="image"></p>
+<h3 id="下载SDK工具包"><a href="#下载SDK工具包" class="headerlink" title="下载SDK工具包"></a>下载SDK工具包</h3><p><a href="https://help.aliyun.com/document_detail/55359.html?spm=5176.doc55284.2.6.YWub4d" target="_blank" rel="external">下载地址</a><br>需要下面的两个SDK<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918110720.jpg" alt="image"></p>
+<h3 id="将SDK加入本地Maven"><a href="#将SDK加入本地Maven" class="headerlink" title="将SDK加入本地Maven"></a>将SDK加入本地Maven</h3><p>SDK是否能在maven上获取？<br>无法找到。将本地的jar加入自己的maven仓库。在控制台下输入下面命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mvn install:install-file   </div><div class="line">　　　　　　　　　　-DgroupId=com.aliyun  </div><div class="line">　　　　　　　　　　-DartifactId=aliyun-java-sdk-dysmsapi</div><div class="line">　　　　　　　　　　-Dversion=1.0　　　　　　　 // 版本号     </div><div class="line">　　　　　　　　　　-Dpackaging=jar            //类型</div><div class="line">　　　　　　　　　　-Dfile=d:\****.jar         //jar包名</div></pre></td></tr></table></figure></p>
+<h3 id="在pom-xml添加依赖"><a href="#在pom-xml添加依赖" class="headerlink" title="在pom.xml添加依赖"></a>在pom.xml添加依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;dependencies&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;junit&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;junit&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;4.12&lt;/version&gt;</div><div class="line">        &lt;scope&gt;test&lt;/scope&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;1.0&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;1.0&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line">&lt;/dependencies&gt;</div></pre></td></tr></table></figure>
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">package com.bold.login;</div><div class="line"></div><div class="line">import com.aliyuncs.DefaultAcsClient;</div><div class="line">import com.aliyuncs.IAcsClient;</div><div class="line">import com.aliyuncs.dysmsapi.model.v20170525.SendSmsRequest;</div><div class="line">import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;</div><div class="line">import com.aliyuncs.exceptions.ClientException;</div><div class="line">import com.aliyuncs.profile.DefaultProfile;</div><div class="line">import com.aliyuncs.profile.IClientProfile;</div><div class="line">import com.bold.login.utils.Code;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 发送验证码类 调用方式：Message.sendMessage(String phoneNum)</div><div class="line"> */</div><div class="line">public class Message &#123;</div><div class="line">    /**</div><div class="line">     * 获取IAcsClient对象</div><div class="line">     *</div><div class="line">     * @return</div><div class="line">     * @throws ClientException</div><div class="line">     */</div><div class="line">    private static IAcsClient initClient() throws ClientException &#123;</div><div class="line">        System.setProperty(&quot;sun.net.client.defaultConnectTimeout&quot;, &quot;10000&quot;);</div><div class="line">        System.setProperty(&quot;sun.net.client.defaultReadTimeout&quot;, &quot;10000&quot;);</div><div class="line">        // 初始化ascClient需要的几个参数</div><div class="line">        final String product = &quot;Dysmsapi&quot;;// 短信API产品名称</div><div class="line">        final String domain = &quot;dysmsapi.aliyuncs.com&quot;;// 短信API产品域名</div><div class="line">        // 秘钥key和secret</div><div class="line">        final String appkey = &quot;yourappkey&quot;;// 这里需要修改为yourappkey</div><div class="line">        final String appSecret = &quot;yourappSecret&quot;;// 这里需要修改为yourappSecret</div><div class="line">        // 初始化ascClient,暂时不支持多region</div><div class="line">        IClientProfile profile = DefaultProfile.getProfile(&quot;cn-hangzhou&quot;, appkey, appSecret);</div><div class="line">        DefaultProfile.addEndpoint(&quot;cn-hangzhou&quot;, &quot;cn-hangzhou&quot;, product, domain);</div><div class="line">        IAcsClient acsClient = new DefaultAcsClient(profile);</div><div class="line">        return acsClient;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 获取SMS_94770128短信模板对应的请求</div><div class="line">     *</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    private static SendSmsRequest getSMS_94770128Message(String phoneNum) &#123;</div><div class="line">        //组装请求对象</div><div class="line">        SendSmsRequest request = new SendSmsRequest();</div><div class="line">        //必填:待发送手机号。支持以逗号分隔的形式进行批量调用，批量上限为20个手机号码,批量调用相对于单条调用及时性稍有延迟,验证码类型的短信推荐使用单条调用的方式</div><div class="line">        request.setPhoneNumbers(phoneNum);</div><div class="line">        //必填:短信签名-可在短信控制台中找到 这里需要修改</div><div class="line">        request.setSignName(&quot;丢哪儿&quot;);</div><div class="line">        //必填:短信模板-可在短信控制台中找到 这里需要修改</div><div class="line">        request.setTemplateCode(&quot;SMS_94770128&quot;);</div><div class="line">        //可选:模板中的变量替换JSON串,如模板内容为&quot;亲爱的$&#123;name&#125;,您的验证码为$&#123;code&#125;&quot;时,此处的值为</div><div class="line">        // Code.getCode() 生成验证码</div><div class="line">        request.setTemplateParam(&quot;&#123;\&quot;code\&quot;:\&quot;&quot; + Code.getCode() + &quot;\&quot;&#125;&quot;);</div><div class="line">        //可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者</div><div class="line">        //request.setOutId(&quot;1&quot;);</div><div class="line">        return request;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * @param phoneNum 手机号</div><div class="line">     * @throws ClientException</div><div class="line">     */</div><div class="line">    public static void sendMessage(String phoneNum) throws ClientException &#123;</div><div class="line">        // 初始化client对象</div><div class="line">        IAcsClient client = initClient();</div><div class="line">        // 短信模板请求对象</div><div class="line">        SendSmsRequest request = null;</div><div class="line">        // 根据短信模板code来获取不同的短信模板请求对象</div><div class="line">        request = getSMS_94770128Message(phoneNum);</div><div class="line"></div><div class="line">        // 发送短信</div><div class="line">        SendSmsResponse response = client.getAcsResponse(request);</div><div class="line">        // 打印短信的消息</div><div class="line">        System.out.println(&quot;_____________发送SMS_94770128短信收到的响应信息_______________&quot;);</div><div class="line">        System.out.println(&quot;请求的ID:&quot; + response.getRequestId());</div><div class="line">        System.out.println(&quot;请求的状态码:&quot; + response.getCode());</div><div class="line">        System.out.println(&quot;请求的状态码描述:&quot; + response.getMessage());</div><div class="line">        System.out.println(&quot;请求的回执ID:&quot; + response.getBizId());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">package com.bold.login.utils;</div><div class="line"></div><div class="line">import java.util.Random;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 生成验证码</div><div class="line"> */</div><div class="line">public class Code &#123;</div><div class="line">    public static String getCode() &#123;</div><div class="line">        StringBuilder sb = new StringBuilder();</div><div class="line">        Random random = new Random();</div><div class="line">        for (int i = 0; i &lt; 6; i++) &#123;</div><div class="line">            sb.append(random.nextInt(10));</div><div class="line">        &#125;</div><div class="line">        return sb.toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class MessageTest &#123;</div><div class="line">    @Test</div><div class="line">    public void sendMessage() throws Exception &#123;</div><div class="line">        Message.sendMessage(&quot;15080031181&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://ovqozoxra.bkt.clouddn.com/20170918112150.jpg" alt="image"><br><img src="http://ovqozoxra.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170918112336.png" alt="image"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p><a href="http://blog.csdn.net/peak_and_valley/article/details/54582055" target="_blank" rel="external">http://blog.csdn.net/peak_and_valley/article/details/54582055</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/短信验证码/" rel="tag"># 短信验证码</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/17/JVM/" rel="next" title="JVM基础知识">
+                <i class="fa fa-chevron-left"></i> JVM基础知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Bold" />
+          <p class="site-author-name" itemprop="name">Bold</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/18bold" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置短信平台信息"><span class="nav-number">2.</span> <span class="nav-text">配置短信平台信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码"><span class="nav-number">3.</span> <span class="nav-text">编码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Maven项目"><span class="nav-number">3.1.</span> <span class="nav-text">创建Maven项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载SDK工具包"><span class="nav-number">3.2.</span> <span class="nav-text">下载SDK工具包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将SDK加入本地Maven"><span class="nav-number">3.3.</span> <span class="nav-text">将SDK加入本地Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在pom-xml添加依赖"><span class="nav-number">3.4.</span> <span class="nav-text">在pom.xml添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo"><span class="nav-number">3.5.</span> <span class="nav-text">demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-number">3.6.</span> <span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bold</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Mist
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>
