@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JVM," />
+  <meta name="keywords" content="第三方登录,微博," />
 
 
 
@@ -94,18 +94,31 @@
 
 
 
-<meta name="description" content="数据类型 Java虚拟机中，数据类型可以分为两类：基本类型和引用类型。    基本类型的变量保存原始值，即：他代表的值就是数值本身；而引用类型的变量保存引用值。“引用值”代表了某个对象的引用，而不是对象本身，对象本身存放在这个引用值所表示的地址的位置。基本类型包括：byte,short,int,long,char,float,double,Boolean,returnAddress 引用类型包括：">
-<meta name="keywords" content="JVM">
+<meta name="description" content="前言微博的第三方登录提供多种开发的SDK,最先尝试使用js的SDK开发，以为比较简单，结果卡在了appkey与域名绑定的上，还未解决。本文改用Java SDK 开发。 步骤注册开发者账号 创建新应用  测试时应用地址填写本地地址就行，上线修改为自己服务器地址   下载SDK,引入项目Java SDK 下载 修改Config.properties文件 调用example里：OAuth4Code.ja">
+<meta name="keywords" content="第三方登录,微博">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM基础知识">
-<meta property="og:url" content="http://yoursite.com/2017/09/17/JVM/index.html">
+<meta property="og:title" content="第三方登录之微博篇">
+<meta property="og:url" content="http://yoursite.com/2017/09/18/微博登录/index.html">
 <meta property="og:site_name" content="Bold">
-<meta property="og:description" content="数据类型 Java虚拟机中，数据类型可以分为两类：基本类型和引用类型。    基本类型的变量保存原始值，即：他代表的值就是数值本身；而引用类型的变量保存引用值。“引用值”代表了某个对象的引用，而不是对象本身，对象本身存放在这个引用值所表示的地址的位置。基本类型包括：byte,short,int,long,char,float,double,Boolean,returnAddress 引用类型包括：">
+<meta property="og:description" content="前言微博的第三方登录提供多种开发的SDK,最先尝试使用js的SDK开发，以为比较简单，结果卡在了appkey与域名绑定的上，还未解决。本文改用Java SDK 开发。 步骤注册开发者账号 创建新应用  测试时应用地址填写本地地址就行，上线修改为自己服务器地址   下载SDK,引入项目Java SDK 下载 修改Config.properties文件 调用example里：OAuth4Code.ja">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T06:10:11.855Z">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918161957.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918162400.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918162446.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918162713.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918162742.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918163548.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918164411.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918163851.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918164913.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918164943.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918165848.jpg">
+<meta property="og:image" content="http://ovqozoxra.bkt.clouddn.com/20170918170156.jpg">
+<meta property="og:updated_time" content="2017-09-18T09:09:40.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JVM基础知识">
-<meta name="twitter:description" content="数据类型 Java虚拟机中，数据类型可以分为两类：基本类型和引用类型。    基本类型的变量保存原始值，即：他代表的值就是数值本身；而引用类型的变量保存引用值。“引用值”代表了某个对象的引用，而不是对象本身，对象本身存放在这个引用值所表示的地址的位置。基本类型包括：byte,short,int,long,char,float,double,Boolean,returnAddress 引用类型包括：">
+<meta name="twitter:title" content="第三方登录之微博篇">
+<meta name="twitter:description" content="前言微博的第三方登录提供多种开发的SDK,最先尝试使用js的SDK开发，以为比较简单，结果卡在了appkey与域名绑定的上，还未解决。本文改用Java SDK 开发。 步骤注册开发者账号 创建新应用  测试时应用地址填写本地地址就行，上线修改为自己服务器地址   下载SDK,引入项目Java SDK 下载 修改Config.properties文件 调用example里：OAuth4Code.ja">
+<meta name="twitter:image" content="http://ovqozoxra.bkt.clouddn.com/20170918161957.jpg">
 
 
 
@@ -134,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/17/JVM/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/18/微博登录/"/>
 
 
 
 
 
-  <title>JVM基础知识 | Bold</title>
+  <title>第三方登录之微博篇 | Bold</title>
   
 
 
@@ -277,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/JVM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/微博登录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bold">
@@ -294,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JVM基础知识</h1>
+          <h1 class="post-title" itemprop="name headline">第三方登录之微博篇</h1>
         
 
         <div class="post-meta">
@@ -306,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T14:09:12+08:00">
-                2017-09-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T17:08:02+08:00">
+                2017-09-18
               </time>
             
 
@@ -329,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JVM/" itemprop="url" rel="index">
-                    <span itemprop="name">JVM</span>
+                  <a href="/categories/第三方登录/" itemprop="url" rel="index">
+                    <span itemprop="name">第三方登录</span>
                   </a>
                 </span>
 
@@ -366,17 +379,27 @@
       
 
       
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
-<p>Java虚拟机中，数据类型可以分为两类：<strong>基本类型</strong>和<strong>引用类型</strong>。  </p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>微博的第三方登录提供多种开发的SDK,最先尝试使用js的SDK开发，以为比较简单，结果卡在了appkey与域名绑定的上，还未解决。本文改用Java SDK 开发。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="注册开发者账号"><a href="#注册开发者账号" class="headerlink" title="注册开发者账号"></a>注册开发者账号</h3><p><img src="http://ovqozoxra.bkt.clouddn.com/20170918161957.jpg" alt="image"></p>
+<h3 id="创建新应用"><a href="#创建新应用" class="headerlink" title="创建新应用"></a>创建新应用</h3><p><img src="http://ovqozoxra.bkt.clouddn.com/20170918162400.jpg" alt="image"><br><img src="http://ovqozoxra.bkt.clouddn.com/20170918162446.jpg" alt="image"></p>
+<blockquote>
+<p><strong>测试时应用地址填写本地地址就行，上线修改为自己服务器地址</strong></p>
 </blockquote>
-<p>基本类型的变量保存原始值，即：他代表的值就是数值本身；而引用类型的变量保存引用值。“引用值”代表了某个对象的引用，而不是对象本身，对象本身存放在这个引用值所表示的地址的位置。<br>基本类型包括：byte,short,int,long,char,float,double,Boolean,returnAddress</p>
-<p>引用类型包括：类类型，接口类型和数组。</p>
-<h2 id="堆与栈"><a href="#堆与栈" class="headerlink" title="堆与栈"></a>堆与栈</h2><blockquote>
-<p>栈是运行时的单位，而堆是存储的单位。   </p>
-</blockquote>
-<p>栈解决程序的<strong>运行问题</strong>，即程序如何执行，或者说如何处理数据；<br>堆解决的是数据<strong>存储问题</strong>，即数据怎么放、放在哪儿。<br>在Java中<strong>一个线程就会相应有一个线程栈与之对</strong>应，这点很容易理解，因为不同的线程执行逻辑有所不同，因此需要一个独立的线程栈。而<strong>堆则是所有线程共享的</strong>。栈因为是运行单位，因此里面存储的信息都是跟当前线程（或程序）相关信息的。包括局部变量、程序运行状态、方法返回值等等；而堆只负责存储对象信息。</p>
-<h2 id="堆中存什么？栈中存什么？"><a href="#堆中存什么？栈中存什么？" class="headerlink" title="堆中存什么？栈中存什么？"></a>堆中存什么？栈中存什么？</h2><p>堆中存的是==对象==。栈中存的是==基本数据类型==和堆中==对象的引用==。一个对象的大小是不可估计的，或者说是可以动态变化的，但是在栈中，一个对象只对应了一个4btye的引用（堆栈分离的好处：））。<br>为什么不把基本类型放堆中呢？因为其占用的空间一般是1~8个字节——需要空间比较少，而且因为是基本类型，所以不会出现动态增长的情况——长度固定，因此栈中存储就够了，如果把他存在堆中是没有什么意义的。可以这么说，基本类型和对象的引用都是存放在栈中，而且都是几个字节的一个数，因此在程序运行时，他们的处理方式是统一的。但是基本类型、对象引用和对象本身就有所区别了，因为一个是栈中的数据一个是堆中的数据。最常见的一个问题就是，Java中参数传递时的问题。</p>
-<h2 id="Java中的参数传递时传值呢？还是传引用？"><a href="#Java中的参数传递时传值呢？还是传引用？" class="headerlink" title="Java中的参数传递时传值呢？还是传引用？"></a>Java中的参数传递时传值呢？还是传引用？</h2><p>要说明这个问题，先要明确两点：<br><strong>1. 不要试图与C进行类比，Java中没有指针的概念</strong><br><strong>2. 程序运行永远都是在栈中进行的，因而参数传递时，只存在传递基本类型和对象引用的问题。不会直接传对象本身。</strong><br>明确以上两点后。Java在方法调用传递参数时，<strong>因为没有指针，所以它都是进行传值调用</strong>。<br>但是传引用的错觉是如何造成的呢？<br>在运行栈中，基本类型和引用的处理是一样的，都是传值，所以，如果是传引用的方法调用，也同时可以理解为“传引用值”的传值调用，即引用的处理跟基本类型是完全一样的。但是当进入被调用方法时，被传递的这个引用的值，被程序解释（或者查找）到堆中的对象，这个时候才对应到真正的对象。如果此时进行修改，==修改的是引用对应的对象==，而不是引用本身，即：修改的是堆中的数据。所以这个修改是可以保持的了。</p>
+<p><img src="http://ovqozoxra.bkt.clouddn.com/20170918162713.jpg" alt="image"><br><img src="http://ovqozoxra.bkt.clouddn.com/20170918162742.jpg" alt="image"></p>
+<h3 id="下载SDK-引入项目"><a href="#下载SDK-引入项目" class="headerlink" title="下载SDK,引入项目"></a>下载SDK,引入项目</h3><p><a href="https://github.com/sunxiaowei2014/weibo4j-oauth2-beta3.1.1/" target="_blank" rel="external">Java SDK 下载</a></p>
+<h3 id="修改Config-properties文件"><a href="#修改Config-properties文件" class="headerlink" title="修改Config.properties文件"></a>修改Config.properties文件</h3><p><img src="http://ovqozoxra.bkt.clouddn.com/20170918163548.jpg" alt="image"></p>
+<h3 id="调用example里：OAuth4Code-java"><a href="#调用example里：OAuth4Code-java" class="headerlink" title="调用example里：OAuth4Code.java"></a>调用example里：OAuth4Code.java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">public class OAuth4Code &#123;</div><div class="line">	public static void main(String [] args) throws WeiboException, IOException&#123;</div><div class="line">		Oauth oauth = new Oauth();</div><div class="line">		BareBonesBrowserLaunch.openURL(oauth.authorize(&quot;code&quot;));</div><div class="line">		System.out.println(oauth.authorize(&quot;code&quot;));</div><div class="line">		System.out.print(&quot;Hit enter when it&apos;s done.[Enter]:&quot;);</div><div class="line">		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</div><div class="line">		String code = br.readLine();</div><div class="line">		Log.logInfo(&quot;code: &quot; + code);</div><div class="line">		try&#123;</div><div class="line">			System.out.println(oauth.getAccessTokenByCode(code));</div><div class="line">		&#125; catch (WeiboException e) &#123;</div><div class="line">			if(401 == e.getStatusCode())&#123;</div><div class="line">				Log.logInfo(&quot;Unable to get the access token.&quot;);</div><div class="line">			&#125;else&#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行后 会跳转到授权页面<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918164411.jpg" alt="image"></p>
+<p>授权后返回到 回调页面<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918163851.jpg" alt="image"></p>
+<p><strong>得到code</strong><br>回到console输入code<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918164913.jpg" alt="image"></p>
+<p>回车得到用户的授权token等信息<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918164943.jpg" alt="image"></p>
+<p>到此已经获得授权，可以进行其他开发了。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>利用token 和 uid 查看用户的微博信息<br>调用example 下 user 下的 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class ShowUser &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		String access_token = &quot;accesstoken&quot;; //修改为用户的access_token</div><div class="line">		String uid = &quot;uid&quot;; //修改为用户的uid</div><div class="line">		Users um = new Users(access_token);</div><div class="line">		try &#123;</div><div class="line">			User user = um.showUserById(uid);</div><div class="line">			Log.logInfo(user.toString());</div><div class="line">		&#125; catch (WeiboException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以获取用户的基本信息，如：昵称，省份，头像，性别等信息<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918165848.jpg" alt="image"></p>
+<p>example下还有很多的类，可以自己去尝试<br><img src="http://ovqozoxra.bkt.clouddn.com/20170918170156.jpg" alt="image"></p>
+<h2 id="后序"><a href="#后序" class="headerlink" title="后序"></a>后序</h2><p>写完这篇，明天可以安心地去入职了。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.csdn.net/pan_y95/article/details/74803672" target="_blank" rel="external">http://blog.csdn.net/pan_y95/article/details/74803672</a></p>
 
       
     </div>
@@ -394,7 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JVM/" rel="tag"># JVM</a>
+            <a href="/tags/第三方登录/" rel="tag"># 第三方登录</a>
+          
+            <a href="/tags/微博/" rel="tag"># 微博</a>
           
         </div>
       
@@ -407,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/17/MySQL引擎/" rel="next" title="MySQL引擎">
-                <i class="fa fa-chevron-left"></i> MySQL引擎
+              <a href="/2017/09/18/短信验证码/" rel="next" title="短信验证码">
+                <i class="fa fa-chevron-left"></i> 短信验证码
               </a>
             
           </div>
@@ -416,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/18/短信验证码/" rel="prev" title="短信验证码">
-                短信验证码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -566,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆与栈"><span class="nav-number">2.</span> <span class="nav-text">堆与栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆中存什么？栈中存什么？"><span class="nav-number">3.</span> <span class="nav-text">堆中存什么？栈中存什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的参数传递时传值呢？还是传引用？"><span class="nav-number">4.</span> <span class="nav-text">Java中的参数传递时传值呢？还是传引用？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册开发者账号"><span class="nav-number">2.1.</span> <span class="nav-text">注册开发者账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新应用"><span class="nav-number">2.2.</span> <span class="nav-text">创建新应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载SDK-引入项目"><span class="nav-number">2.3.</span> <span class="nav-text">下载SDK,引入项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Config-properties文件"><span class="nav-number">2.4.</span> <span class="nav-text">修改Config.properties文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用example里：OAuth4Code-java"><span class="nav-number">2.5.</span> <span class="nav-text">调用example里：OAuth4Code.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">2.6.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后序"><span class="nav-number">3.</span> <span class="nav-text">后序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
